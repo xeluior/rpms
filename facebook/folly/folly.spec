@@ -6,7 +6,7 @@
 
 Name:    folly
 Version: v2024.08.19.00
-Release: 0%{?dist}
+Release: %autorelease%{?dist}
 Summary: An open-source C++ library developed by and used at Facebook
 
 License: Apache-2.0
@@ -36,7 +36,12 @@ BuildRequires: lz4-devel
 BuildRequires: openssl-devel
 BuildRequires: snappy-devel
 BuildRequires: xz-devel
+
+%if 0%{?fedora} > 39
 BuildRequires: zlib-ng-compat-devel
+%else
+BuildRequires: zlib-devel
+%endif
 
 %description
 Folly (acronymed loosely after Facebook Open Source Library) is a library of
@@ -70,6 +75,4 @@ use folly.
 %{_libdir}/cmake/folly
 
 %changelog
-* Sun Aug 25 2024 Robert Gingras <developer@three-point-five.dev>
-
-- Initial commit
+%autochangelog
