@@ -6,7 +6,7 @@
 
 Name:    folly
 Version: v2024.08.19.00
-Release: %autorelease%{?dist}
+Release: %autorelease
 Summary: An open-source C++ library developed by and used at Facebook
 
 License: Apache-2.0
@@ -20,7 +20,7 @@ BuildRequires: cmake
 BuildRequires: double-conversion-devel
 BuildRequires: fast_float-devel
 BuildRequires: fmt-devel
-BuildRequires: g++
+BuildRequires: gcc-c++
 BuildRequires: gflags-devel
 BuildRequires: glog-devel
 BuildRequires: gmock-devel
@@ -67,10 +67,11 @@ use folly.
 %files
 %doc
 %license
-%{_libdir}/libfolly*
+%{_libdir}/libfolly*.so.*
 
 %files devel
 %{_includedir}/folly
+%{_libdir}/libfolly*.so
 %{_libdir}/pkgconfig/libfolly.pc
 %{_libdir}/cmake/folly
 
