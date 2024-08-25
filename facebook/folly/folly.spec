@@ -4,10 +4,11 @@
 # https://docs.fedoraproject.org/en-US/packaging-guidelines/
 
 
-Name:    folly
-Version: v2024.08.19.00
-Release: %autorelease
-Summary: An open-source C++ library developed by and used at Facebook
+Name:     folly
+Version:  v2024.08.19.00
+Release:  %autorelease
+Packager: Robert Gingras <developer@three-point-five.dev>
+Summary:  An open-source C++ library developed by and used at Facebook
 
 License: Apache-2.0
 URL:     https://github.com/facebook/folly
@@ -76,4 +77,5 @@ use folly.
 %{_libdir}/cmake/folly
 
 %changelog
-%autochangelog
+* Sun Aug 25 2024 Robert Gingras <developer@three-point-five.dev>
+- Initial commit
