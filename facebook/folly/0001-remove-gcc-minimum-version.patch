@@ -1,0 +1,31 @@
+From 78e4dbdcbad6637b4caab342708138b07d693f4e Mon Sep 17 00:00:00 2001
+From: Robert Gingras <developer@three-point-five.dev>
+Date: Sun, 25 Aug 2024 16:27:57 -0400
+Subject: [PATCH] remove gcc minimum version
+
+---
+ folly/Portability.h | 8 --------
+ 1 file changed, 8 deletions(-)
+
+diff --git a/folly/Portability.h b/folly/Portability.h
+index e823f27f4..03c995ab2 100644
+--- a/folly/Portability.h
++++ b/folly/Portability.h
+@@ -34,14 +34,6 @@
+ 
+ static_assert(FOLLY_CPLUSPLUS >= 201703L, "__cplusplus >= 201703L");
+ 
+-#if defined(__GNUC__) && !defined(__clang__)
+-#if defined(FOLLY_CONFIG_TEMPORARY_DOWNGRADE_GCC)
+-static_assert(__GNUC__ >= 9, "__GNUC__ >= 9");
+-#else
+-static_assert(__GNUC__ >= 10, "__GNUC__ >= 10");
+-#endif
+-#endif
+-
+ #if defined(_MSC_VER)
+ static_assert(_MSC_VER >= 1920);
+ #endif
+-- 
+2.46.0
+

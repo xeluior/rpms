@@ -13,6 +13,7 @@ Summary:  An open-source C++ library developed by and used at Facebook
 License: Apache-2.0
 URL:     https://github.com/facebook/folly
 Source0: https://github.com/facebook/folly/releases/download/%{version}/%{name}-%{version}.tar.gz
+Patch0:  0001-remove-gcc-minimum-version.patch
 
 BuildRequires: binutils-devel
 BuildRequires: boost-devel
@@ -56,7 +57,7 @@ The folly-devel package contains header files for developing applications that
 use folly.
 
 %prep
-%setup -q -c
+%autosetup -c
 
 %build
 %cmake -DCMAKE_INSTALL_DIR=%{_libdir}/cmake/folly
